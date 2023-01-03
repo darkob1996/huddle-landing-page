@@ -1,0 +1,51 @@
+@import "variables";
+@import "components";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-family-body;
+  font-weight: $font-weight-body;
+  display: grid;
+  grid-template-columns:
+    [container-start] minmax(2rem, 5%) [content-start] 1fr [content-end] minmax(
+      2rem,
+      5%
+    )
+    [container-end];
+  grid-template-rows: auto repeat(2, min-content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+}
+
+.section-main {
+  grid-column: content-start / content-end;
+}
+
+.section-features {
+  grid-column: content-start / content-end;
+  padding-block: 10rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 3rem;
+  position: relative;
+}
